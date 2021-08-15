@@ -1,0 +1,94 @@
+// SIDEBAR
+.sidebar {
+  width: 30rem;
+  height: 100vh;
+  background: $main-color;
+  position: fixed;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+// PROFILE BLOCK
+.profile-block {
+  display: flex;
+  gap: 10px;
+  
+  > .photo {
+    display: block;
+    width: 10rem;
+    height: 10rem;
+    position: relative;
+
+    > .image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 0.4rem;
+      overflow: hidden;
+    }
+  }
+
+  > .info {
+    padding: 0.5rem 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    > .name {
+      font-size: $font-size-l;
+      font-weight: 600;
+      color: $white;;
+      margin-bottom: 1rem;
+    }
+
+    > .edit-link {
+      font-size: $font-size-s;
+      font-weight: 500;
+      color: darken($color: $white, $amount: 50%);
+
+      &:hover {
+        color: $white;
+      }
+    }
+
+    > .edit-link > i {
+      font-size: $font-size-m;
+    }
+  } 
+}
+
+.nav-wrapper {
+  display: flex;
+  justify-content: center;
+
+  > .list {
+    width: 15rem;
+    padding-top: 2.5rem;
+    border-top: 1px solid darken($color: $white, $amount: 60%);
+    margin-bottom: 5rem;
+    > .item {
+      &:not(:last-child) {
+        margin-bottom: 1.5rem;
+      }
+    }
+
+    > .item > .link {
+      font-size: $font-size-r;
+      color: darken($color: $white, $amount: 25%);
+
+      display: inline-flex;
+      align-items: center;
+      gap: 1.5rem;
+
+      > i {
+        font-size: $font-size-l;
+      }
+
+      &:hover {
+        color: $white;
+      }
+    }
+  }
+}
+
