@@ -1,14 +1,159 @@
-Search artists, playlists or tracks
-Dany Schudler
-Edit Profile
-Overview
-News
-Playlists
-Discover
-Dashboard
-Messages
-Notifications
-Account
-Featured Playlists
-Profile Views
-Tracks
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Music Library</title>
+  <link rel="stylesheet" href="assets/fonts/fontawesome/css/all.min.css" />
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <aside class="sidebar">
+    <div class="profile-block">
+      <figure class="photo">
+        <img src="assets/images/profile.jpg" alt="Dany Schuldler">
+      </figure>
+      <div class="info">
+        <p class="name">Dany Schuldler</p>
+        <a class="edit-link" href="#">Edit profile <i class="far fa-cog"></i></a>
+      </div>
+    </div>
+    <nav class="nav-wrapper">
+      <ul class="list">
+        <li class="item"><a class="link" href="#"><i class="far fa-compact-disc"></i> Overview</a></li>
+        <li class="item"><a class="link" href="#"><i class="far fa-newspaper"></i> News</a></li>
+        <li class="item"><a class="link" href="#"><i class="far fa-music"></i> Playlist</a></li>
+        <li class="item"><a class="link" href="#"><i class="far fa-signal-stream"></i> Discover</a></li>
+      </ul>
+    </nav>
+    <nav class="nav-wrapper">
+      <ul class="list">
+        <li class="item"><a class="link" href="#"><i class="far fa-sliders-v"></i> Dashboard</a></li>
+        <li class="item"><a class="link" href="#"><i class="far fa-comment-alt"></i> Messages</a></li>
+        <li class="item"><a class="link" href="#"><i class="far fa-bell"></i> Notifications</a></li>
+        <li class="item"><a class="link" href="#"><i class="far fa-user-alt"></i> Account</a></li>
+      </ul>
+    </nav>
+  </aside>
+  <main class="main-content">
+    <form class="search-form">
+      <div class="prefix"></div>
+      <input class="field" type="search" name="search" id="search" placeholder="Search artists, playlists or tracks">
+    </form>
+    <section class="content-top">
+      <h2 class="title">Feature Playlists</h2>
+      <div class="playlists-wrapper">
+        <div class="playlist">
+          <figure class="image">
+            <img src="assets/images/playlist1.jpg" alt="Only STARDUST">
+          </figure>
+          <h3 class="title">Only STARDUST</h3>
+          <p class="track-quantity">24 tracks</p>
+        </div>
+        <div class="playlist">
+          <figure class="image">
+            <img src="assets/images/playlist2.jpg" alt="Mike Vella">
+          </figure>
+          <h3 class="title">Mike Vella</h3>
+          <p class="track-quantity">12 tracks</p>
+        </div>
+        <div class="playlist">
+          <figure class="image">
+            <img src="assets/images/playlist3.jpg" alt="the best singles s2">
+          </figure>
+          <h3 class="title">the best singles s2</h3>
+          <p class="track-quantity">163 tracks</p>
+        </div>
+        <div class="playlist">
+          <figure class="image">
+            <img src="assets/images/playlist4.jpg" alt="Indies">
+          </figure>
+          <h3 class="title">Indies</h3>
+          <p class="track-quantity">138 tracks</p>
+        </div>
+      </div>
+    </section>
+    <section class="content-wrapper">
+      <!-- PROFILE VIEWS -->
+      <article class="profile-views">
+        <h2 class="title">Profile Views</h2>
+        <ul class="view-list">
+          <li class="view">
+            <figure class="photo">
+              <img src="assets/images/view1.jpg" alt="Jenny Villa">
+            </figure>
+            <div class="info">
+              <h3 class="name">Jenny Villa</h3>
+              <p class="date">1 day ago</p>
+            </div>
+            <div class="albums">
+              <p>4 albums</p>
+            </div>
+          </li>
+          <li class="view">
+            <figure class="photo">
+              <img src="assets/images/view2.jpg" alt="Aquila">
+            </figure>
+            <div class="info">
+              <h3 class="name">Aquila</h3>
+              <p class="date">3 days ago</p>
+            </div>
+            <div class="albums">
+              <p>2 albums</p>
+            </div>
+          </li>
+          <li class="view">
+            <figure class="photo">
+              <img src="assets/images/view3.jpg" alt="This is War">
+            </figure>
+            <div class="info">
+              <h3 class="name">This is War</h3>
+              <p class="date">2 week ago</p>
+            </div>
+            <div class="albums">
+              <p>5 albums</p>
+            </div>
+          </li>
+        </ul>
+      </article>
+      <!-- TRACKS -->
+      <article class="tracks">
+        <h2 class="title">Tracks</h2>
+        <div class="tracks-wrapper">
+          <div class="track">
+            <figure class="photo">
+              <img src="assets/images/track1.jpg" alt="Sexy in Paris">
+            </figure>
+            <h3 class="artist">Mahara Bon</h3>
+            <p class="song">Sexy in Paris</p>
+          </div>
+          <div class="track">
+            <figure class="photo">
+              <img src="assets/images/track2.jpg" alt="Pseudo-Life">
+            </figure>
+            <h3 class="artist">Donna</h3>
+            <p class="song">Pseudo-Life</p>
+          </div>
+          <div class="track">
+            <figure class="photo">
+              <img src="assets/images/track3.jpg" alt="Magic">
+            </figure>
+            <h3 class="artist">Avven</h3>
+            <p class="song">Magic</p>
+          </div>
+          <div class="track">
+            <figure class="photo">
+              <img src="assets/images/track4.jpg" alt="Living">
+            </figure>
+            <h3 class="artist">Cony Matt</h3>
+            <p class="song">Living</p>
+          </div>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <script type="module" src="assets/js/main.js"></script>
+</body>
+</html>

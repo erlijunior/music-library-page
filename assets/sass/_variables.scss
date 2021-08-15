@@ -1,0 +1,54 @@
+// CORES DO SITE
+
+// CONFIGURAÇÃO DE FONTE
+$font-html: 62.5%;
+$font-family: "Montserrat", sans-serif;
+
+$font-size-xs: 0.8rem;
+$font-size-s: 1.2rem;
+$font-size-m: 1.4rem;
+$font-size-r: 1.6rem;
+$font-size-l: 2rem;
+$font-size-xl: 3rem;
+$font-size-xxl: 4rem;
+$font-size-exl: 5rem;
+
+$breakpoints: (
+  // Extra small screen / phone
+  "xs": 0,
+  // Small screen / phone
+  "sm": 576px,
+  // Medium screen / tablet
+  "md": 768px,
+  // Large screen / desktop
+  "lg": 992px,
+  // Extra large screen / wide desktop
+  "xl": 1200px
+) !default;
+
+@mixin media($breakpoint) {
+  @media (min-width: map-get($map: $breakpoints, $key: $breakpoint)) {
+    @content;
+  }
+}
+
+@mixin col($numCol, $offset: 0) {
+  margin-left: 100% / 12 * $offset;
+  padding-right: 15px;
+  padding-left: 15px;
+  width: 100%;
+  max-width: 100% / 12 * $numCol;
+  flex: 0 0 100% / 12 * $numCol;
+}
+
+@keyframes leftright {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(5px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}

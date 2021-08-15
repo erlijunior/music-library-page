@@ -1,0 +1,24 @@
+{
+  "name": "music-library-page",
+  "version": "1.0.0",
+  "description": "",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "browser-sync": "^2.26.14",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^7.0.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-sass": "^4.1.0",
+    "gulp-uglify": "^3.0.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.14.0",
+    "@babel/preset-env": "^7.14.1",
+    "gulp-babel": "^8.0.0"
+  },
+  "scripts": {
+    "dev": "gulp"
+  },
+  "author": "",
+  "license": "ISC"
+}
