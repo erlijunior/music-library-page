@@ -1,0 +1,229 @@
+.main-content {
+  width: calc(100vw - 30rem);
+  height: 100vh;
+  margin-left: 30rem;
+  padding-left: 10rem;
+  padding-right: 2.5rem;
+}
+
+.search-form {
+  display: flex;
+  padding: 3rem 0;
+  margin-bottom: 1.5rem;
+  > .prefix {
+    margin-right: 2rem;
+    > .far {
+      font-size: $font-size-l;
+      color: $second-text;
+    }
+  }
+
+  > .field {
+    width: 100%;
+    background: transparent;
+    border: none;
+    color: $second-text;
+    font-size: $font-size-m;
+
+    &::placeholder {
+      color: currentColor;
+    }
+  }
+}
+
+.content-top {
+  margin-bottom: 4.5rem;
+  > .title {
+    @extend %title;
+    font-size: $font-size-l;
+    margin-bottom: 2.5rem;
+  }
+}
+
+.playlists-wrapper {
+  display: flex;
+  gap: 2.5rem;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  padding-bottom: 1.5rem;
+
+  > .playlist {
+    flex-shrink: 0;
+    max-width: 44.8rem;
+    width: 100%;
+
+    > .image {
+      height: 25rem;
+    }
+  }
+}
+
+.playlist {
+  > .image {
+    display: block;
+    overflow: hidden;
+    border-radius: 2.5rem;
+    margin-bottom: 1rem;
+
+    > img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.6;
+      transform-origin: center;
+      transition: all 0.4s ease;
+    }
+
+    &:hover {
+      > img {
+        opacity: 1;
+        transform: scale(1.2);
+      }
+    }
+  }
+
+  > .title {
+    @extend %title;
+    font-size: $font-size-r;
+    margin-bottom: 0.5rem;
+  }
+
+  > .track-quantity {
+    font-size: $font-size-s;
+    font-weight: 400;
+    color: $second-text;
+  }
+}
+
+.content-bottom {
+  display: flex;
+  flex-wrap: wrap;
+
+  .views,
+  .tracks {
+    flex: 1 1 50%;
+    max-width: 50%;
+  }
+}
+
+.views {
+  > .title {
+    @extend %title;
+    font-size: $font-size-l;
+    margin-bottom: 2.5rem;
+  }
+  .view-list {
+    max-width: 35rem;
+  }
+}
+
+.view {
+  margin-bottom: 2.5rem;
+  > .link {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+    opacity: 0.6;
+
+    > .photo {
+      display: block;
+      width: 4rem;
+      height: 4rem;
+      position: relative;
+      border-radius: 0.4rem;
+      overflow: hidden;
+
+      > .image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    > .info {
+      > .name {
+        font-size: $font-size-m;
+        font-weight: 400;
+        color: $main-text;
+        margin-bottom: 0.5rem;
+      }
+
+      > .date {
+        font-size: 1rem;
+        color: $second-text;
+        letter-spacing: 0.15rem;
+      }
+    }
+    > .albums {
+      margin-left: auto;
+      font-size: 1rem;
+      color: $second-text;
+      letter-spacing: 0.15rem;
+    }
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
+
+.tracks {
+  > .title {
+    @extend %title;
+    font-size: $font-size-l;
+    margin-bottom: 2.5rem;
+  }
+
+  .tracks-wrapper {
+    width: calc(100% - 10rem);
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding-bottom: 1.5rem;
+
+    > .track {
+      flex-shrink: 0;
+      max-width: 10rem;
+      width: 100%;
+
+      > .photo {
+        height: 10rem;
+      }
+    }
+  }
+}
+
+.track {
+  opacity: 0.6;
+  transition: all 0.4s ease;
+  &:hover {
+    opacity: 1;
+  }
+  > .photo {
+    display: block;
+    overflow: hidden;
+    margin-bottom: 1rem;
+
+    > img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  > .artist {
+    @extend %title;
+    font-size: $font-size-s;
+    font-weight: 400;
+    letter-spacing: 0.15rem;
+    margin-bottom: 0.5rem;
+  }
+
+  > .song {
+    font-size: 1rem;
+    font-weight: 400;
+    color: $second-text;
+    letter-spacing: 0.15rem;
+  }
+}

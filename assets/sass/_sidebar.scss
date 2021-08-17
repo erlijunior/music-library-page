@@ -17,8 +17,8 @@
   
   > .photo {
     display: block;
-    width: 10rem;
-    height: 10rem;
+    width: 6rem;
+    height: 6rem;
     position: relative;
 
     > .image {
@@ -36,19 +36,19 @@
     flex-direction: column;
     justify-content: center;
     > .name {
-      font-size: $font-size-l;
+      font-size: $font-size-m;
       font-weight: 600;
-      color: $white;;
+      color: $main-text;
       margin-bottom: 1rem;
     }
 
     > .edit-link {
       font-size: $font-size-s;
       font-weight: 500;
-      color: darken($color: $white, $amount: 50%);
+      color: $second-text;
 
       &:hover {
-        color: $white;
+        color: $main-text;
       }
     }
 
@@ -65,7 +65,7 @@
   > .list {
     width: 15rem;
     padding-top: 2.5rem;
-    border-top: 1px solid darken($color: $white, $amount: 60%);
+    border-top: 1px solid $second-text;
     margin-bottom: 5rem;
     > .item {
       &:not(:last-child) {
@@ -74,19 +74,19 @@
     }
 
     > .item > .link {
-      font-size: $font-size-r;
-      color: darken($color: $white, $amount: 25%);
+      font-size: $font-size-m;
+      color: $second-text;
 
       display: inline-flex;
       align-items: center;
       gap: 1.5rem;
 
       > i {
-        font-size: $font-size-l;
+        font-size: $font-size-r;
       }
 
       &:hover {
-        color: $white;
+        color: $main-text;
       }
     }
   }

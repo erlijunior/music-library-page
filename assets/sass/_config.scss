@@ -8,7 +8,29 @@ body {
   font-family: $font-family;
 }
 
+body {
+  background: rgb(16, 19, 41);
+  background: linear-gradient(
+    90deg,
+    rgba(16, 19, 41, 1) 0%,
+    rgba(31, 23, 52, 1) 100%
+  );
+}
+
 .wrapper {
   display: flex;
 }
 
+.-scrollstyle {
+  &::-webkit-scrollbar {
+    border-radius: 10px;
+    height: 1rem;
+    background-color: #20183a;
+    opacity: 0.8;
+  }
+  
+  &::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: rgba(32, 15, 86, 1);
+  }
+}

@@ -41,12 +41,12 @@
     </aside>
     <main class="main-content">
       <form class="search-form">
-        <div class="prefix"></div>
+        <label for="search" class="prefix"><i class="far fa-search"></i></label>
         <input class="field" type="search" name="search" id="search" placeholder="Search artists, playlists or tracks">
       </form>
       <section class="content-top">
         <h2 class="title">Feature Playlists</h2>
-        <div class="playlists-wrapper">
+        <div class="playlists-wrapper -scrollstyle">
           <div class="playlist">
             <figure class="image">
               <img src="assets/images/playlist1.jpg" alt="Only STARDUST">
@@ -77,78 +77,84 @@
           </div>
         </div>
       </section>
-      <section class="content-wrapper">
+      <section class="content-bottom">
         <!-- PROFILE VIEWS -->
-        <article class="profile-views">
+        <article class="views">
           <h2 class="title">Profile Views</h2>
           <ul class="view-list">
             <li class="view">
-              <figure class="photo">
-                <img src="assets/images/view1.jpg" alt="Jenny Villa">
-              </figure>
-              <div class="info">
-                <h3 class="name">Jenny Villa</h3>
-                <p class="date">1 day ago</p>
-              </div>
-              <div class="albums">
-                <p>4 albums</p>
-              </div>
+              <a href="#" class="link">
+                <figure class="photo">
+                  <img class="image" src="assets/images/view1.jpg" alt="Jenny Villa">
+                </figure>
+                <div class="info">
+                  <h3 class="name">Jenny Villa</h3>
+                  <p class="date">1 day ago</p>
+                </div>
+                <div class="albums">
+                  <p>4 albums</p>
+                </div>
+              </a>
             </li>
             <li class="view">
-              <figure class="photo">
-                <img src="assets/images/view2.jpg" alt="Aquila">
-              </figure>
-              <div class="info">
-                <h3 class="name">Aquila</h3>
-                <p class="date">3 days ago</p>
-              </div>
-              <div class="albums">
-                <p>2 albums</p>
-              </div>
+              <a href="#" class="link">
+                <figure class="photo">
+                  <img class="image" src="assets/images/view2.jpg" alt="Aquila">
+                </figure>
+                <div class="info">
+                  <h3 class="name">Aquila</h3>
+                  <p class="date">3 days ago</p>
+                </div>
+                <div class="albums">
+                  <p>2 albums</p>
+                </div>
+              </a>
             </li>
             <li class="view">
-              <figure class="photo">
-                <img src="assets/images/view3.jpg" alt="This is War">
-              </figure>
-              <div class="info">
-                <h3 class="name">This is War</h3>
-                <p class="date">2 week ago</p>
-              </div>
-              <div class="albums">
-                <p>5 albums</p>
-              </div>
+              <a href="#" class="link">
+                <figure class="photo">
+                  <img class="image" src="assets/images/view3.jpg" alt="This is War">
+                </figure>
+                <div class="info">
+                  <h3 class="name">This is War</h3>
+                  <p class="date">2 week ago</p>
+                </div>
+                <div class="albums">
+                  <p>5 albums</p>
+                </div>
+              </a>
             </li>
           </ul>
         </article>
         <!-- TRACKS -->
         <article class="tracks">
           <h2 class="title">Tracks</h2>
-          <div class="tracks-wrapper">
+          <div class="tracks-wrapper -scrollstyle">
             <div class="track">
-              <figure class="photo">
+              <a href="#" class="photo">
                 <img src="assets/images/track1.jpg" alt="Sexy in Paris">
-              </figure>
+              </a>
               <h3 class="artist">Mahara Bon</h3>
               <p class="song">Sexy in Paris</p>
             </div>
             <div class="track">
-              <figure class="photo">
+              <a href="#" class="photo">
                 <img src="assets/images/track2.jpg" alt="Pseudo-Life">
-              </figure>
+              </a>
               <h3 class="artist">Donna</h3>
               <p class="song">Pseudo-Life</p>
             </div>
             <div class="track">
-              <figure class="photo">
+              <a href="#" class="photo">
                 <img src="assets/images/track3.jpg" alt="Magic">
-              </figure>
+              </a>
               <h3 class="artist">Avven</h3>
               <p class="song">Magic</p>
             </div>
             <div class="track">
-              <figure class="photo">
+              <a href="#" class="photo">
                 <img src="assets/images/track4.jpg" alt="Living">
-              </figure>
+              </a>
               <h3 class="artist">Cony Matt</h3>
               <p class="song">Living</p>
             </div>
@@ -158,6 +164,6 @@
     </main>
   </div>
 
-  <script type="module" src="assets/js/main.js"></script>
+  <script src="assets/js/main.js"></script>
 </body>
 </html>

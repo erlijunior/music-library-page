@@ -1,7 +1,8 @@
 // CORES DO SITE
 $main-color: #040517;
 $black: #040517;
-$white: #e5e5e5e7;
+$main-text: #e5e5e5e7;
+$second-text: #F5f5f555;
 
 // CONFIGURAÇÃO DE FONTE
 $font-html: 62.5%;
@@ -11,10 +12,10 @@ $font-size-xs: 0.8rem;
 $font-size-s: 1.2rem;
 $font-size-m: 1.4rem;
 $font-size-r: 1.6rem;
-$font-size-l: 2rem;
-$font-size-xl: 3rem;
-$font-size-xxl: 4rem;
-$font-size-exl: 5rem;
+$font-size-l: 1.8rem;
+$font-size-xl: 2.4rem;
+$font-size-xxl: 3rem;
+$font-size-exl: 4rem;
 
 $breakpoints: (
   // Extra small screen / phone
@@ -28,6 +29,11 @@ $breakpoints: (
   // Extra large screen / wide desktop
   "xl": 1200px
 ) !default;
+
+%title {
+  font-weight: 600;
+  color: $main-text;
+}
 
 @mixin media($breakpoint) {
   @media (min-width: map-get($map: $breakpoints, $key: $breakpoint)) {

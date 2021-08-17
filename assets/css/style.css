@@ -1,4 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,900;1,300&display=swap");
+.content-top > .title, .playlist > .title, .views > .title, .tracks > .title, .track > .artist {
+  font-weight: 600;
+  color: #e5e5e5e7; }
+
 @-webkit-keyframes leftright {
   0% {
     transform: translateX(0); }
@@ -6,6 +10,7 @@
     transform: translateX(5px); }
   100% {
     transform: translateX(0); } }
+
 @keyframes leftright {
   0% {
     transform: translateX(0); }
@@ -68,8 +73,22 @@ html,
 body {
   font-family: "Montserrat", sans-serif; }
 
+body {
+  background: #101329;
+  background: linear-gradient(90deg, #101329 0%, #1f1734 100%); }
+
 .wrapper {
   display: flex; }
+
+.-scrollstyle::-webkit-scrollbar {
+  border-radius: 10px;
+  height: 1rem;
+  background-color: #20183a;
+  opacity: 0.8; }
+
+.-scrollstyle::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: #200f56; }
 
 .sidebar {
   width: 30rem;
@@ -86,8 +105,8 @@ body {
   gap: 10px; }
   .profile-block > .photo {
     display: block;
-    width: 10rem;
-    height: 10rem;
+    width: 6rem;
+    height: 6rem;
     position: relative; }
     .profile-block > .photo > .image {
       width: 100%;
@@ -102,14 +121,14 @@ body {
     flex-direction: column;
     justify-content: center; }
     .profile-block > .info > .name {
-      font-size: 2rem;
+      font-size: 1.4rem;
       font-weight: 600;
       color: #e5e5e5e7;
       margin-bottom: 1rem; }
     .profile-block > .info > .edit-link {
       font-size: 1.2rem;
       font-weight: 500;
-      color: rgba(102, 102, 102, 0.905882); }
+      color: #F5f5f555; }
       .profile-block > .info > .edit-link:hover {
         color: #e5e5e5e7; }
     .profile-block > .info > .edit-link > i {
@@ -121,17 +140,185 @@ body {
   .nav-wrapper > .list {
     width: 15rem;
     padding-top: 2.5rem;
-    border-top: 1px solid rgba(76, 76, 76, 0.905882);
+    border-top: 1px solid #F5f5f555;
     margin-bottom: 5rem; }
     .nav-wrapper > .list > .item:not(:last-child) {
       margin-bottom: 1.5rem; }
     .nav-wrapper > .list > .item > .link {
-      font-size: 1.6rem;
-      color: rgba(165, 165, 165, 0.905882);
+      font-size: 1.4rem;
+      color: #F5f5f555;
       display: inline-flex;
       align-items: center;
       gap: 1.5rem; }
       .nav-wrapper > .list > .item > .link > i {
-        font-size: 2rem; }
+        font-size: 1.6rem; }
       .nav-wrapper > .list > .item > .link:hover {
         color: #e5e5e5e7; }
+
+.main-content {
+  width: calc(100vw - 30rem);
+  height: 100vh;
+  margin-left: 30rem;
+  padding-left: 10rem;
+  padding-right: 2.5rem; }
+
+.search-form {
+  display: flex;
+  padding: 3rem 0;
+  margin-bottom: 1.5rem; }
+  .search-form > .prefix {
+    margin-right: 2rem; }
+    .search-form > .prefix > .far {
+      font-size: 1.8rem;
+      color: #F5f5f555; }
+  .search-form > .field {
+    width: 100%;
+    background: transparent;
+    border: none;
+    color: #F5f5f555;
+    font-size: 1.4rem; }
+    .search-form > .field::-moz-placeholder {
+      color: currentColor; }
+    .search-form > .field:-ms-input-placeholder {
+      color: currentColor; }
+    .search-form > .field::placeholder {
+      color: currentColor; }
+
+.content-top {
+  margin-bottom: 4.5rem; }
+  .content-top > .title {
+    font-size: 1.8rem;
+    margin-bottom: 2.5rem; }
+
+.playlists-wrapper {
+  display: flex;
+  gap: 2.5rem;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  padding-bottom: 1.5rem; }
+  .playlists-wrapper > .playlist {
+    flex-shrink: 0;
+    max-width: 44.8rem;
+    width: 100%; }
+    .playlists-wrapper > .playlist > .image {
+      height: 25rem; }
+
+.playlist > .image {
+  display: block;
+  overflow: hidden;
+  border-radius: 2.5rem;
+  margin-bottom: 1rem; }
+  .playlist > .image > img {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
+    opacity: 0.6;
+    transform-origin: center;
+    transition: all 0.4s ease; }
+  .playlist > .image:hover > img {
+    opacity: 1;
+    transform: scale(1.2); }
+
+.playlist > .title {
+  font-size: 1.6rem;
+  margin-bottom: 0.5rem; }
+
+.playlist > .track-quantity {
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: #F5f5f555; }
+
+.content-bottom {
+  display: flex;
+  flex-wrap: wrap; }
+  .content-bottom .views,
+  .content-bottom .tracks {
+    flex: 1 1 50%;
+    max-width: 50%; }
+
+.views > .title {
+  font-size: 1.8rem;
+  margin-bottom: 2.5rem; }
+
+.views .view-list {
+  max-width: 35rem; }
+
+.view {
+  margin-bottom: 2.5rem; }
+  .view > .link {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+    opacity: 0.6; }
+    .view > .link > .photo {
+      display: block;
+      width: 4rem;
+      height: 4rem;
+      position: relative;
+      border-radius: 0.4rem;
+      overflow: hidden; }
+      .view > .link > .photo > .image {
+        width: 100%;
+        height: 100%;
+        -o-object-fit: cover;
+        object-fit: cover; }
+    .view > .link > .info > .name {
+      font-size: 1.4rem;
+      font-weight: 400;
+      color: #e5e5e5e7;
+      margin-bottom: 0.5rem; }
+    .view > .link > .info > .date {
+      font-size: 1rem;
+      color: #F5f5f555;
+      letter-spacing: 0.15rem; }
+    .view > .link > .albums {
+      margin-left: auto;
+      font-size: 1rem;
+      color: #F5f5f555;
+      letter-spacing: 0.15rem; }
+    .view > .link:hover {
+      opacity: 1; }
+
+.tracks > .title {
+  font-size: 1.8rem;
+  margin-bottom: 2.5rem; }
+
+.tracks .tracks-wrapper {
+  width: calc(100% - 10rem);
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  padding-bottom: 1.5rem; }
+  .tracks .tracks-wrapper > .track {
+    flex-shrink: 0;
+    max-width: 10rem;
+    width: 100%; }
+    .tracks .tracks-wrapper > .track > .photo {
+      height: 10rem; }
+
+.track {
+  opacity: 0.6;
+  transition: all 0.4s ease; }
+  .track:hover {
+    opacity: 1; }
+  .track > .photo {
+    display: block;
+    overflow: hidden;
+    margin-bottom: 1rem; }
+    .track > .photo > img {
+      width: 100%;
+      height: 100%;
+      -o-object-fit: cover;
+      object-fit: cover; }
+  .track > .artist {
+    font-size: 1.2rem;
+    font-weight: 400;
+    letter-spacing: 0.15rem;
+    margin-bottom: 0.5rem; }
+  .track > .song {
+    font-size: 1rem;
+    font-weight: 400;
+    color: #F5f5f555;
+    letter-spacing: 0.15rem; }
