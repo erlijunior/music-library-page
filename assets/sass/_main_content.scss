@@ -1,15 +1,21 @@
 .main-content {
-  width: calc(100vw - 30rem);
-  height: 100vh;
-  margin-left: 30rem;
-  padding-left: 10rem;
-  padding-right: 2.5rem;
+  height: calc(100vh - 10rem);
+  padding: 0 2rem;
+
+  @include media('xl') {
+    height: auto;
+    max-width: 110rem;
+    width: calc(100vw - 20rem);
+    margin-left: 25rem;
+    padding-left: 7.5rem;
+    padding-right: 2.5rem;
+  }
 }
 
 .search-form {
   display: flex;
-  padding: 3rem 0;
-  margin-bottom: 1.5rem;
+  padding: 2rem 0 0;
+  margin-bottom: 2.5rem;
   > .prefix {
     margin-right: 2rem;
     > .far {
@@ -32,11 +38,11 @@
 }
 
 .content-top {
-  margin-bottom: 4.5rem;
+  margin-bottom: 3rem;
   > .title {
     @extend %title;
     font-size: $font-size-l;
-    margin-bottom: 2.5rem;
+    margin-bottom: 2rem;
   }
 }
 
@@ -49,11 +55,11 @@
 
   > .playlist {
     flex-shrink: 0;
-    max-width: 44.8rem;
+    max-width: 29.5rem;
     width: 100%;
 
     > .image {
-      height: 25rem;
+      height: 17.5rem;
     }
   }
 }
@@ -62,7 +68,7 @@
   > .image {
     display: block;
     overflow: hidden;
-    border-radius: 2.5rem;
+    border-radius: 1.5rem;
     margin-bottom: 1rem;
 
     > img {
@@ -98,11 +104,20 @@
 .content-bottom {
   display: flex;
   flex-wrap: wrap;
+  padding-bottom: 2rem;
 
   .views,
-  .tracks {
-    flex: 1 1 50%;
-    max-width: 50%;
+    .tracks {
+      width: 100%;
+    }
+
+  @include media('xl') {
+    padding-bottom: 0;
+    .views,
+    .tracks {
+      flex: 1 1 50%;
+      max-width: 50%;
+    }
   }
 }
 
@@ -110,10 +125,10 @@
   > .title {
     @extend %title;
     font-size: $font-size-l;
-    margin-bottom: 2.5rem;
+    margin-bottom: 2rem;
   }
   .view-list {
-    max-width: 35rem;
+    max-width: 32.5rem;
   }
 }
 
@@ -171,11 +186,11 @@
   > .title {
     @extend %title;
     font-size: $font-size-l;
-    margin-bottom: 2.5rem;
+    margin-bottom: 2rem;
   }
 
   .tracks-wrapper {
-    width: calc(100% - 10rem);
+
     display: flex;
     gap: 1.5rem;
     flex-wrap: nowrap;
@@ -191,6 +206,10 @@
         height: 10rem;
       }
     }
+  }
+
+  @include media('xl') {
+    width: calc(100% - 10rem);
   }
 }
 

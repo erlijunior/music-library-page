@@ -78,7 +78,8 @@ body {
   background: linear-gradient(90deg, #101329 0%, #1f1734 100%); }
 
 .wrapper {
-  display: flex; }
+  display: flex;
+  overflow-x: hidden; }
 
 .-scrollstyle::-webkit-scrollbar {
   border-radius: 10px;
@@ -91,14 +92,65 @@ body {
   background: #200f56; }
 
 .sidebar {
-  width: 30rem;
-  height: 100vh;
   background: #040517;
   position: fixed;
   padding: 2rem;
   display: flex;
-  flex-direction: column;
-  justify-content: space-around; }
+  z-index: 1;
+  flex-wrap: wrap;
+  width: 100vw;
+  height: 100vh;
+  top: calc(100% - 10rem);
+  transition: all 0.4s ease; }
+  .sidebar .profile-block {
+    position: absolute;
+    flex: 0 0 100%;
+    max-width: 100%; }
+  .sidebar .nav-content {
+    align-self: center;
+    margin: 0 auto; }
+  .sidebar.opened {
+    top: 0; }
+  @media (min-width: 1200px) {
+    .sidebar {
+      top: 0;
+      width: 25rem;
+      flex-direction: column;
+      justify-content: space-around; }
+      .sidebar .profile-block {
+        position: static;
+        flex: 0; } }
+
+.mobile-trigger {
+  position: absolute;
+  z-index: 1;
+  top: 4rem;
+  right: 3.5rem; }
+
+.button-menu {
+  width: 2rem;
+  height: 2rem;
+  background-color: transparent;
+  border: none; }
+  .button-menu > .line {
+    display: block;
+    height: 2px;
+    background: #fff;
+    transform: scaleX(1);
+    transform-origin: right;
+    transition: transform ease .4s; }
+    .button-menu > .line:last-child {
+      margin-top: 0.5rem;
+      transform: scaleX(0.6); }
+  .button-menu.active > .line:first-child {
+    transform: scaleX(0.6); }
+  .button-menu.active > .line:last-child {
+    transform: scaleX(1); }
+
+@media (min-width: 1200px) {
+  .button-menu {
+    position: static;
+    display: none; } }
 
 .profile-block {
   display: flex;
@@ -124,15 +176,18 @@ body {
       font-size: 1.4rem;
       font-weight: 600;
       color: #e5e5e5e7;
-      margin-bottom: 1rem; }
+      margin-bottom: 0.5em; }
     .profile-block > .info > .edit-link {
-      font-size: 1.2rem;
+      font-size: 1rem;
       font-weight: 500;
-      color: #F5f5f555; }
+      color: #F5f5f555;
+      display: flex;
+      align-items: center; }
       .profile-block > .info > .edit-link:hover {
         color: #e5e5e5e7; }
     .profile-block > .info > .edit-link > i {
-      font-size: 1.4rem; }
+      font-size: 1.4rem;
+      margin-left: 0.5rem; }
 
 .nav-wrapper {
   display: flex;
@@ -145,27 +200,32 @@ body {
     .nav-wrapper > .list > .item:not(:last-child) {
       margin-bottom: 1.5rem; }
     .nav-wrapper > .list > .item > .link {
-      font-size: 1.4rem;
+      font-size: 1.2rem;
       color: #F5f5f555;
       display: inline-flex;
       align-items: center;
       gap: 1.5rem; }
       .nav-wrapper > .list > .item > .link > i {
-        font-size: 1.6rem; }
+        font-size: 1.4rem; }
       .nav-wrapper > .list > .item > .link:hover {
         color: #e5e5e5e7; }
 
 .main-content {
-  width: calc(100vw - 30rem);
-  height: 100vh;
-  margin-left: 30rem;
-  padding-left: 10rem;
-  padding-right: 2.5rem; }
+  height: calc(100vh - 10rem);
+  padding: 0 2rem; }
+  @media (min-width: 1200px) {
+    .main-content {
+      height: auto;
+      max-width: 110rem;
+      width: calc(100vw - 20rem);
+      margin-left: 25rem;
+      padding-left: 7.5rem;
+      padding-right: 2.5rem; } }
 
 .search-form {
   display: flex;
-  padding: 3rem 0;
-  margin-bottom: 1.5rem; }
+  padding: 2rem 0 0;
+  margin-bottom: 2.5rem; }
   .search-form > .prefix {
     margin-right: 2rem; }
     .search-form > .prefix > .far {
@@ -185,10 +245,10 @@ body {
       color: currentColor; }
 
 .content-top {
-  margin-bottom: 4.5rem; }
+  margin-bottom: 3rem; }
   .content-top > .title {
     font-size: 1.8rem;
-    margin-bottom: 2.5rem; }
+    margin-bottom: 2rem; }
 
 .playlists-wrapper {
   display: flex;
@@ -198,15 +258,15 @@ body {
   padding-bottom: 1.5rem; }
   .playlists-wrapper > .playlist {
     flex-shrink: 0;
-    max-width: 44.8rem;
+    max-width: 29.5rem;
     width: 100%; }
     .playlists-wrapper > .playlist > .image {
-      height: 25rem; }
+      height: 17.5rem; }
 
 .playlist > .image {
   display: block;
   overflow: hidden;
-  border-radius: 2.5rem;
+  border-radius: 1.5rem;
   margin-bottom: 1rem; }
   .playlist > .image > img {
     width: 100%;
@@ -231,18 +291,25 @@ body {
 
 .content-bottom {
   display: flex;
-  flex-wrap: wrap; }
+  flex-wrap: wrap;
+  padding-bottom: 2rem; }
   .content-bottom .views,
   .content-bottom .tracks {
-    flex: 1 1 50%;
-    max-width: 50%; }
+    width: 100%; }
+  @media (min-width: 1200px) {
+    .content-bottom {
+      padding-bottom: 0; }
+      .content-bottom .views,
+      .content-bottom .tracks {
+        flex: 1 1 50%;
+        max-width: 50%; } }
 
 .views > .title {
   font-size: 1.8rem;
-  margin-bottom: 2.5rem; }
+  margin-bottom: 2rem; }
 
 .views .view-list {
-  max-width: 35rem; }
+  max-width: 32.5rem; }
 
 .view {
   margin-bottom: 2.5rem; }
@@ -282,10 +349,9 @@ body {
 
 .tracks > .title {
   font-size: 1.8rem;
-  margin-bottom: 2.5rem; }
+  margin-bottom: 2rem; }
 
 .tracks .tracks-wrapper {
-  width: calc(100% - 10rem);
   display: flex;
   gap: 1.5rem;
   flex-wrap: nowrap;
@@ -297,6 +363,10 @@ body {
     width: 100%; }
     .tracks .tracks-wrapper > .track > .photo {
       height: 10rem; }
+
+@media (min-width: 1200px) {
+  .tracks {
+    width: calc(100% - 10rem); } }
 
 .track {
   opacity: 0.6;

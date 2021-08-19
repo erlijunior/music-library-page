@@ -1,13 +1,87 @@
 // SIDEBAR
 .sidebar {
-  width: 30rem;
-  height: 100vh;
   background: $main-color;
   position: fixed;
   padding: 2rem;
   display: flex;
-  flex-direction: column;
-  justify-content: space-around;
+  z-index: 1;
+  flex-wrap: wrap;
+  width: 100vw;
+  height: 100vh;
+  top: calc(100% - 10rem);
+  transition: all 0.4s ease;
+
+  .profile-block {
+    position: absolute;
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+
+  .nav-content {
+    align-self: center;
+    margin: 0 auto;
+  }
+
+  &.opened {
+    top: 0;
+  }
+
+  @include media('xl') {
+    top: 0;
+    width: 25rem;
+    flex-direction: column;
+    justify-content: space-around;
+
+    .profile-block { 
+      position: static;
+      flex: 0;
+    }
+  }
+}
+
+.mobile-trigger {
+  position: absolute;
+  z-index: 1;
+  top: 4rem;
+  right: 3.5rem;
+}
+
+.button-menu {
+  width: 2rem;
+  height: 2rem;
+  background-color: transparent;
+  border: none;
+  > .line {
+    display: block;
+    height: 2px;
+    background: #fff;
+    transform: scaleX(1);
+    transform-origin: right;
+    transition: transform ease .4s;
+    
+    &:last-child {
+      margin-top: 0.5rem;
+      transform: scaleX(0.6);
+    }
+  }
+
+  &.active {
+    > .line {
+      &:first-child {
+        transform: scaleX(0.6);
+      }
+      &:last-child {
+        transform: scaleX(1);
+      }
+    }
+  }
+}
+
+@include media('xl') {
+  .button-menu {
+    position: static;
+    display: none;
+  }
 }
 
 // PROFILE BLOCK
@@ -39,13 +113,15 @@
       font-size: $font-size-m;
       font-weight: 600;
       color: $main-text;
-      margin-bottom: 1rem;
+      margin-bottom: 0.5em;
     }
 
     > .edit-link {
-      font-size: $font-size-s;
+      font-size: 1rem;
       font-weight: 500;
       color: $second-text;
+      display: flex;
+      align-items: center;
 
       &:hover {
         color: $main-text;
@@ -54,6 +130,7 @@
 
     > .edit-link > i {
       font-size: $font-size-m;
+      margin-left: 0.5rem;
     }
   } 
 }
@@ -74,7 +151,7 @@
     }
 
     > .item > .link {
-      font-size: $font-size-m;
+      font-size: $font-size-s;
       color: $second-text;
 
       display: inline-flex;
@@ -82,7 +159,7 @@
       gap: 1.5rem;
 
       > i {
-        font-size: $font-size-r;
+        font-size: $font-size-m;
       }
 
       &:hover {
@@ -91,4 +168,3 @@
     }
   }
 }
-

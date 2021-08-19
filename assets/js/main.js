@@ -1,1 +1,1 @@
-"use strict";
+"use strict";var buttonMenu=document.querySelector('[data-toggle="menu"]'),menuMobile=document.querySelector(".sidebar");function toggleMenu(){menuMobile.classList.toggle("opened"),buttonMenu.classList.toggle("active")}buttonMenu.addEventListener("click",toggleMenu);
