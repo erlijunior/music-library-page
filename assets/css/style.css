@@ -71,8 +71,7 @@ html {
 
 html,
 body {
-  font-family: "Montserrat", sans-serif;
-  overflow: hidden; }
+  font-family: "Montserrat", sans-serif; }
 
 body {
   background: #101329;
@@ -212,8 +211,6 @@ body {
         color: #e5e5e5e7; }
 
 .main-content {
-  height: 100vh;
-  overflow-y: auto;
   padding: 0 2rem;
   padding-bottom: 10rem; }
   @media (min-width: 1200px) {
